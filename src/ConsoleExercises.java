@@ -32,7 +32,7 @@ public class ConsoleExercises {
         width = sc.nextInt();
         System.out.print("Please input height: ");
         height = sc.nextInt();
-        System.out.println();
+        System.out.println("==================================");
         System.out.println("area: "+(length*width));
         System.out.println("perimeter: "+((2*length)+(2*width)));
         System.out.println("volume: "+(length*width*height));
