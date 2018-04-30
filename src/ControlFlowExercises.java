@@ -55,7 +55,7 @@ public class ControlFlowExercises {
             }
         }
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-");
-        long num;
+        int num;
         System.out.print("what number would you like to go up to?: ");
         num = sc.nextInt();
         System.out.println("Here is your Table!");
@@ -80,7 +80,20 @@ public class ControlFlowExercises {
             }
             System.out.println(icu);
         }
-
+        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-");
+        System.out.print("Input a grade from 0 to 100: ");
+        int grade = sc.nextInt();
+        if (grade<60) {
+            System.out.println("You got an F");
+        }else if (grade<67) {
+            System.out.println("You got a D");
+        }else if (grade<80) {
+            System.out.println("You got a C");
+        }else if (grade<88) {
+            System.out.println("You got a B");
+        }else {
+            System.out.println("You got an A");
+        }
 
     }
 }
