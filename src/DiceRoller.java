@@ -1,5 +1,3 @@
-import com.sun.tools.javac.Main;
-
 import java.util.Scanner;
 public class DiceRoller {
     public static void main(String[] args) {
