@@ -12,6 +12,8 @@ public class DiceRoller {
         int total = 0;
         String cont;
         String sumwant;
+        System.out.println("Booting Dice Roller...");
+        System.out.println();
         System.out.println("What sided die do you want to throw?");
         dietype = sc.nextInt();
         System.out.println("how many d" + dietype + " do you want to throw?");
