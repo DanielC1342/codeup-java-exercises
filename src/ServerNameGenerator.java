@@ -7,7 +7,7 @@ public class ServerNameGenerator {
         System.out.println("Your code name is: " + code + "-" + name);
     }
     public static String returnRando(String[] words) {
-        int rando = (int)(Math.random()*(words.length-1));
+        int rando = (int)(Math.random()*(words.length));
         return words[rando];
     }
 }
