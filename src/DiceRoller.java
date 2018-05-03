@@ -8,9 +8,7 @@ public class DiceRoller {
         int dietype;
         int dienum;
         int total = 0;
-        String cont;
         String sumwant;
-        System.out.println("Booting Dice Roller...");
         System.out.println();
         System.out.println("What sided die do you want to throw?");
         dietype = sc.nextInt();
@@ -21,19 +19,22 @@ public class DiceRoller {
             int rawroll = (int)(Math.random()*(dietype))+1;
             System.out.print(rawroll+" ");
             total += rawroll;
+            if(dienum==1&&dietype==20&&rawroll==1) {
+                System.out.println("Yikes...");
+            }
+            if(dienum==1&&dietype==20&&rawroll==20) {
+                System.out.println("Nice!");
+            }
         }
         System.out.println();
-        System.out.println("Do you want the total? [y/n]");
-        sumwant = sc.next();
-        if(sumwant.equals("y")) {
-            System.out.println("Total: "+total);
+        if (dienum>1) {
+            System.out.println("Do you want the total? [y/n]");
+            sumwant = sc.next();
+            if (sumwant.equals("y")) {
+                System.out.println("Total: " + total);
+            }
         }
         System.out.println();
-        System.out.println();
-        System.out.println("Roll Again? [y/n]");
-        cont = sc.next();
-        if(cont.equals("y")) {
-            dice();
-        }
+        dice();
     }
 }
