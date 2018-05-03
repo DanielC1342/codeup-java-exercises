@@ -34,7 +34,7 @@ public class Input {
     }
 
     public int getInt() {
-        System.out.println("Give me a double");
+        System.out.println("Give me an int");
         System.out.println(">");
         return scanner.nextInt();
     }
