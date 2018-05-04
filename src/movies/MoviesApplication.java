@@ -1,7 +1,7 @@
 package movies;
 import util.Input;
 public class MoviesApplication {
-    public void main(String[] args) {
+    public static void main(String[] args) {
         //MoviesArray master = new MoviesArray();
         Movie[] list = MoviesArray.findAll();
         System.out.println();
@@ -17,7 +17,7 @@ public class MoviesApplication {
         ask(list);
 
     }
-    public void ask(Movie[] list) {
+    public static void ask(Movie[] list) {
 
         System.out.print("Enter Your Selection: ");
         int selection = Input.getInt();
@@ -39,49 +39,59 @@ public class MoviesApplication {
         }else if (selection == 5) {
             System.out.println();
             scifi(list);
+        }else {
+            System.out.println();
+            System.out.println("Invalid input, try again");
+            System.out.println();
+            ask(list);
         }
     }
 
-    public void allMovies(Movie[] list) {
+    public static void allMovies(Movie[] list) {
         for (Movie film:list) {
             System.out.println(film.getName()+" -- "+film.getCategory());
         }
+        System.out.println();
         ask(list);
     }
 
-    public void animated(Movie[] list) {
+    public static void animated(Movie[] list) {
         for (Movie film:list) {
             if (film.getCategory().equals("animated")) {
                 System.out.println(film.getName()+" -- "+film.getCategory());
             }
         }
+        System.out.println();
         ask(list);
     }
 
-    public void drama(Movie[] list) {
+    public static void drama(Movie[] list) {
         for (Movie film:list) {
             if (film.getCategory().equals("drama")) {
                 System.out.println(film.getName()+" -- "+film.getCategory());
             }
         }
+        System.out.println();
         ask(list);
     }
 
-    public void horror(Movie[] list) {
+    public static void horror(Movie[] list) {
         for (Movie film:list) {
             if (film.getCategory().equals("horror")) {
                 System.out.println(film.getName()+" -- "+film.getCategory());
             }
         }
+        System.out.println();
         ask(list);
     }
 
-    public void scifi(Movie[] list) {
+    public static void scifi(Movie[] list) {
         for (Movie film:list) {
             if (film.getCategory().equals("scifi")) {
                 System.out.println(film.getName()+" -- "+film.getCategory());
             }
         }
+        System.out.println();
         ask(list);
     }
 
