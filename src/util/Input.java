@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class Input {
 
-    private Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
 
     String getString() {
         return scanner.nextLine();
     }
 
-    boolean yesNo() {
+    public static boolean yesNo() {
         String bool = scanner.next();
         if (bool.equals("y")||bool.equals("Y")||bool.equals("yes")||bool.equals("Yes")) {
             return true;
@@ -19,7 +19,7 @@ public class Input {
         }
     }
 
-    int getInt(int min, int max) {
+    public static int getInt(int min, int max) {
         int num = scanner.nextInt();
         if (num < min || num > max) {
             num = getInt(min,max);
@@ -27,11 +27,11 @@ public class Input {
         return num;
     }
 
-    public int getInt() {
+    public static int getInt() {
         return scanner.nextInt();
     }
 
-    double getDouble(double min, double max) {
+    public static double getDouble(double min, double max) {
         double num = scanner.nextDouble();
         if (num < min || num > max) {
             num = getDouble(min,max);
@@ -39,7 +39,7 @@ public class Input {
         return num;
     }
 
-    double getDouble() {
+    public static double getDouble() {
         double num = scanner.nextDouble();
         return num;
     }

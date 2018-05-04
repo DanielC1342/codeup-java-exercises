@@ -9,5 +9,19 @@ public class Movie {
         category = b;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setName(String newName) {
+        name = newName;
+    }
+
+    public void setCategory(String newCat) {
+        category = newCat;
+    }
 }
