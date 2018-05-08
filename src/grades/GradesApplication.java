@@ -1,5 +1,6 @@
 package grades;
 
+import java.lang.reflect.Array;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -49,17 +50,26 @@ public class GradesApplication {
 
     public static void execute(HashMap<String,Student> students) {
         Scanner sc = new Scanner(System.in);
+        System.out.println();
         System.out.println("Here are the Students usernames: ");
         for(HashMap.Entry<String,Student> entry: students.entrySet()) {
             System.out.print(" |"+entry.getKey()+"| ");
         }
         System.out.println();
         System.out.println();
-        System.out.println("Which student do you want more info on? (case sensitive)");
+        System.out.println("Which student do you want more info on? (Type \"viewall\" to see all students grades)");
         System.out.print(">");
         String response = sc.nextLine();
-        if(students.containsKey(response)) {
+        if(response.equals("viewall")) {
+            System.out.println();
+            for(HashMap.Entry<String,Student> entry: students.entrySet()) {
+                System.out.println(entry.getValue().getName()+" - "+entry.getValue().getGrades()+" | Avg: "+entry.getValue().getGradeAvg());
+            }
+        }
+        else if(students.containsKey(response)) {
+            System.out.println();
             System.out.println("Name: " + students.get(response).getName() + " - GitHub Username: " + response);
+            System.out.println("Grades: " + students.get(response).getGrades());
             System.out.println("Current Average: " + students.get(response).getGradeAvg());
             System.out.println();
         }
