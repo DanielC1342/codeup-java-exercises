@@ -54,14 +54,17 @@ public class Deck {
         return (getVal(check) + " of " + check.suit);
     }
 
-    public void draw(int num, Deck target) {
+    public ArrayList<Card> draw(int num, Deck target) {
+        ArrayList<Card> hand = new ArrayList<>();
         if (target.deck.size()<num) {
             System.out.println("Not enough cards, Please re-shuffle");
         }else {
             for (int x = 0; x < num; x++) {
-                System.out.println(getCard(target.deck.get(0)));
+                hand.add(target.deck.get(0));
                 target.deck.remove(0);
             }
+            return hand;
         }
+        return null;
     }
 }
