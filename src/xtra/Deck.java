@@ -26,6 +26,27 @@ public class Deck {
         }
     }
 
+    public String getCardByVal (int val) {
+        if(val == 11) {
+            return "Jack";
+        }
+        if(val == 12) {
+            return "Queen";
+        }
+        if(val == 13) {
+            return "King";
+        }
+        if(val == 14 || val == 1) {
+            return "Ace";
+        }
+        if(val == 15) {
+            return "Joker";
+        }
+        else {
+            return Integer.toString(val);
+        }
+    }
+
     public String getVal(Card check) {
         if(check.val == 11) {
             return "Jack";
