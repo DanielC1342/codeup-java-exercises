@@ -1,3 +1,5 @@
+package xtra;
+
 import java.util.Scanner;
 public class DiceRoller {
     public static void main(String[] args) {
