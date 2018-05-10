@@ -10,7 +10,7 @@ public class Deck {
         for (String suit : suits) {
             for(int x = 2;x<15;x++) {
                 if (x == 14 && !acehigh) {
-                    Card nu = new Card(suit,0);
+                    Card nu = new Card(suit,1);
                     deck.add(nu);
                 }
                 else {
@@ -36,7 +36,7 @@ public class Deck {
         if(check.val == 13) {
             return "King";
         }
-        if(check.val == 14 || check.val == 0) {
+        if(check.val == 14 || check.val == 1) {
             return "Ace";
         }
         if(check.val == 15) {
