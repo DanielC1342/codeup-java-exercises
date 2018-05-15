@@ -2,7 +2,7 @@ package util;
 
 import java.util.Scanner;
 
-public class Input {
+public class Input extends Exception{
 
     private static Scanner scanner = new Scanner(System.in);
 
@@ -19,7 +19,7 @@ public class Input {
         }
     }
 
-    public static int getInt(int min, int max) {
+    public static int getInt(int min, int max) throws Exception {
         int num;
         try {
             num = Integer.valueOf(scanner.next());
@@ -29,21 +29,19 @@ public class Input {
             }
             return num;
         }catch (Exception e) {
-            System.out.println("Error "+e);
+            throw new Exception("Big time error, Number format Exception");
         }
-        return -1;
     }
 
-    public static int getInt() {
+    public static int getInt() throws Exception {
         try {
             return Integer.valueOf(scanner.next());
         }catch (Exception e) {
-            System.out.println("Error "+e);
+            throw new Exception("Big time error, Number format Exception");
         }
-        return -1;
     }
 
-    public static double getDouble(double min, double max) {
+    public static double getDouble(double min, double max) throws Exception {
         double num;
         try {
             num = Double.valueOf(scanner.next());
@@ -53,18 +51,16 @@ public class Input {
             }
             return num;
         }catch (Exception e) {
-            System.out.println("Error "+e);
+            throw new Exception("Big time error, Number format Exception");
         }
-        return -1.0;
     }
 
-    public static double getDouble() {
+    public static double getDouble() throws Exception {
         try {
             return Double.valueOf(scanner.next());
         }catch (Exception e) {
-            System.out.println("Error "+e);
+            throw new Exception("Big time error, Number format Exception");
         }
-        return -1.0;
     }
 
 }
