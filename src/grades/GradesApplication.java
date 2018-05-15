@@ -74,7 +74,6 @@ public class GradesApplication {
         }
         else {
             System.out.println("Not a valid username");
-            System.out.println();
             execute(students);
         }
         System.out.println();
