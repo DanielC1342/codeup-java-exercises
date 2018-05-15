@@ -20,28 +20,51 @@ public class Input {
     }
 
     public static int getInt(int min, int max) {
-        int num = scanner.nextInt();
-        if (num < min || num > max) {
-            num = getInt(min,max);
+        int num;
+        try {
+            num = Integer.valueOf(scanner.next());
+            if (num < min || num > max) {
+
+                num = getInt(min,max);
+            }
+            return num;
+        }catch (Exception e) {
+            System.out.println("Error "+e);
         }
-        return num;
+        return -1;
     }
 
     public static int getInt() {
-        return scanner.nextInt();
+        try {
+            return Integer.valueOf(scanner.next());
+        }catch (Exception e) {
+            System.out.println("Error "+e);
+        }
+        return -1;
     }
 
     public static double getDouble(double min, double max) {
-        double num = scanner.nextDouble();
-        if (num < min || num > max) {
-            num = getDouble(min,max);
+        double num;
+        try {
+            num = Double.valueOf(scanner.next());
+            if (num < min || num > max) {
+                System.out.println("Not within Parameters");
+                num = getDouble(min,max);
+            }
+            return num;
+        }catch (Exception e) {
+            System.out.println("Error "+e);
         }
-        return num;
+        return -1.0;
     }
 
     public static double getDouble() {
-        double num = scanner.nextDouble();
-        return num;
+        try {
+            return Double.valueOf(scanner.next());
+        }catch (Exception e) {
+            System.out.println("Error "+e);
+        }
+        return -1.0;
     }
 
 }
